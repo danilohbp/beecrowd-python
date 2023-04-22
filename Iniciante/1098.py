@@ -1,19 +1,41 @@
-I = 0
-J = 1
+import math
 
-c = 1
-d = 0
+i = float(0)
+j = float(0)
+seq = 0.2
+c = 0
 while True:
-    print(f"I={I} J={J}")
-    if c % 3 == 0:
-        if I == 2:
-            break
-        c = 0
-        d += 0.2
-        J = 0 + d
-        I = 0 + d
+    if int(i) == 2 and c % 3 == 0:
+        break
+    
+    if c != 0 and c % 3 == 0:
+        j = 1
+        i = 0
+        i += seq
+        j += seq
         
+        if i > 1.8 and i < 2.0:
+            i = float(round(i))
+        
+        if i.is_integer():
+            if j.is_integer():
+                print(f"I={int(i)} J={int(j)}")
+            else:
+                print(f"I={int(i)} J={j:.1f}")
+        else:
+            print(f"I={i:.1f} J={j:.1f}")
+        seq += 0.2
+    else:
+        j += 1
+        
+        if i.is_integer():
+            if j.is_integer():
+                print(f"I={int(i)} J={int(j)}")
+            else:
+                print(f"I={int(i)} J={j:.1f}")
+        else:
+            if j.is_integer():
+                print(f"I={i:.1f} J={int(j)}")
+            else:
+                print(f"I={i:.1f} J={j:.1f}")
     c += 1
-    J += 1
-    I = round(I, 1)
-    J = round(J, 1)
